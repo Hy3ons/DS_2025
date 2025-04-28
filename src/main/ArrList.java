@@ -31,8 +31,14 @@ public class ArrList<E> {
      * <br>1 2 3
      */
     private void resize(int newSize) {
-        // TODO resize 함수를 완성하시오.
+        E temp[] = (E[]) new Object[newSize];
+
+        for (int i=0;i<Math.min(a.length, temp.length);i++) 
+            temp[i] = a[i];
+
+        a = temp;
     }
+
 
     public E deleteLast() {
         return delete(size-1);
